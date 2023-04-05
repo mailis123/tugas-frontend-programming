@@ -1,0 +1,25 @@
+.movie {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .movie__image {
+    border-radius: 25px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  .movie__title {
+    color: #4361ee;
+    font-size: 1.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .movie__date {
+    color: #64748b;
+  }
