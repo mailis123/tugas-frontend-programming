@@ -4,20 +4,25 @@ import Movie from "../Movie/Movie";
 import { useState } from "react";
 import {  nanoid } from "nanoid";
 
-function Movies() {
-  const [movies, setMovies] = useState(data);
 
-function handleClick(){
+function AddMovieForm(props) {
+
+
+function Movies(props)  {
+  const { movies, setMovies} = props;
+}
+function handleSubmit(e){
+  e.preventDefault();
   const movie = {
     id: nanoid(),
-    title:"jigsaw",
-    year:2021,
-    type:"movie",
+    title: title,
+    year:Date,
+    type:"Movie",
     poster: "https://m.media-amazon.com/images/I/71nXlVqnGdL._AC_SY879_.jpg",
   };
 
-  setMovies([...movies, movie]);
-}
+  setMovies([... movies, movie]);
+
 
   return (
     <div className={styles.container}>
@@ -33,5 +38,5 @@ function handleClick(){
     </div>
   );
 }
-
+}
 export default Movies;
