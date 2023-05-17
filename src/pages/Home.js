@@ -11,7 +11,7 @@ import data from '../utils/constans/data';
  * Membuat Component Main
  * Untuk menyimpan Component Hero, Movies dan AddMovieForm
  */
-function Main() {
+function Home() {
 
   const [ movies, setMovies ]= useState(data);
 
@@ -33,15 +33,7 @@ function Main() {
  * Buat Component Home
  * Untuk menyimpan Navbar, Main, & Footer Component
  */
-function Home() {
-  return (
-    <div>
-      <Navbar />
-      <Main />
-      <Footer />
-    </div>
-  );
-}
+
 
 // Lakukan export Home
 export default Home;
