@@ -1,28 +1,30 @@
 import styles from "./Hero.module.css";
+import { useEffect, useState } from "react";
 
 function Hero() {
+
+  const [movie, setMovie] = useState("");
+  
+  async function fetchMovie() {
+    const url = "https://ww.omdbapi.com/?apikey=fcf50ae6&i-tt2975590";
+
+    const response = await fetchMovie(url);
+    const data = await response.json();
+
+    setMovie(data);
+  }
+  useEffect(fetchMovie, []);
+
+  
   return (
     <div className={styles.container}>
       <section className={styles.hero}>
-        <div className={styles.hero__left}>
-          <h2 className={styles.hero__title}>Spiderman</h2>
-          <h3 className={styles.hero__genre}>
-            Genre: Thriller, Drama, Romance
-          </h3>
-          <p className={styles.hero__description}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
-            cum accusamus quisquam earum velit ea nobis maiores exercitationem
-            nam temporibus.
-          </p>
-          <button className={styles.hero__button}>Watch</button>
-        </div>
-        <div className="hero__right">
-          <img
-            className={styles.hero__image}
-            src="https://picsum.photos/536/354"
-            alt="placeholder"
-          />
-        </div>
+      <div className="hero__left">
+          <h2>{movie.title}</h2>
+          <h3>Genre : {movie.Genre}</h3>
+          <p>{movie.Plot}</p>
+          </div>
+
       </section>
     </div>
   );
