@@ -1,12 +1,14 @@
 // Import Halaman Home
-import { Form } from "react-router-dom";
 import Home from "./pages/Home";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react";
 import CreateMovie from "./pages/movie/Create";
 import PopularMovie from "./pages/movie/Popular";
 import NowPlaying from "./pages/movie/NowPlaying";
 import TopRatedMovie from "./pages/movie/TopRated";
 import Layout from "./Layout";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyleComponent } from "styled-components";
+import theme from "./utils/constans/theme";
 
 function App() {
   /**
@@ -16,6 +18,7 @@ function App() {
    */
   return (
     <>
+    <ThemeProvider theme={theme}>
     <Layout>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -25,6 +28,7 @@ function App() {
         <Route path="/movie/top" element={<TopRatedMovie />}></Route>
       </Routes>
     </Layout>
+    </ThemeProvider>
     </>
   );
 }

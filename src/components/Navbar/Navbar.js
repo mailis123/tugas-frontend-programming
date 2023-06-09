@@ -4,7 +4,7 @@
  */
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
-import Home from "../../pages/Home";
+
 
 function Navbar() {
   /**
