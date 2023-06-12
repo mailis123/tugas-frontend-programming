@@ -1,15 +1,19 @@
 import styled from "styled-components";
 
-const StyledHero = styled.div`
+const Container = styled.div`
     margin: 5rem auto;
     padding: 1rem;
 
-    section {
-        displey: flex;
-        flex-direction: column;
-        text-align: center;
+    @media screen and (min-width: 768px){
+        margin: 2rem auto;
     }
 
+    @media screen and (min-width: 992px) {
+        max-width: 1200px;
+    }
+`
+// styled component Hero
+const StyledHero= styled.section`
     article {
         margin-bottom: 1rem;
     }
@@ -79,3 +83,4 @@ const StyledHero = styled.div`
 `;
 
 export default StyledHero;
+export {Container};
