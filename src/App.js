@@ -11,7 +11,12 @@ import GlobalStyle from "./components/GlobalStyle";
 import theme from "./utils/constans/theme";
 import Detail from "./pages/movie/Detail";
 
+import { useState } from "react";
+import data from "./utils/constans/data";
+
 function App() {
+
+const [movies, setMovies] = useState(data);
 
   return (
     <>
@@ -26,14 +31,10 @@ function App() {
         <Layout>
           {/* Menggunakan Global Style Component */}
           <GlobalStyle />
-          {/*
-          * Membuat Routing.
-          * Bungkus Routing menggunakan Routes.
-          * Buat Routing menggunakan Route.
-          */}
+          
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/movie/create" element={<CreateMovie />} />
+            <Route path="/" element={<Home movies={movies} setMovies={setMovies} />}></Route>
+            <Route path="/movie/create" element={<CreateMovie movies={movies} setMovies={setMovies} />} />
             <Route path="/movie/popular" element={<PopularMovie />} />
             <Route path="/movie/now" element={<NowPlaying />} />
             <Route path="/movie/top" element={<TopRatedMovie />} />

@@ -2,13 +2,28 @@ import React, { useEffect, useState } from "react";
 import Button from "../ui/Button/Button";
 import StyledHero, { Container } from './Hero.styled';
 import axios from "axios";
+import data from "../../utils/constans/data";
+
+
+// const movieSlice = createSlice({
+//   name: "Movies Slice",
+//   initialState: {
+//     movies: data,
+//   },
+//   reducers: {
+//     addMovie(state, action) {},
+//   },
+// });
+
+// const { addMovie } = moviesSlice.actions;
+// const movieReducer = movie
 
 function Hero() {
-
+  // Membuat State movie
   const [movie, setMovie] = useState("");
   const API_KEY = process.env.REACT_APP_API_KEY;
-  const genres = movie && movie.genres.map((genre) => genre.name);
-  const idTrailer = movie && movie.videos.result[0].key;
+  const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
+  const idTrailer = movie && movie.videos.results[0].key;
 
   
 

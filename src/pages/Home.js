@@ -6,24 +6,23 @@ import Movies from '../components/Movies/Movies';
 import data from '../utils/constans/data';
 
 
+
+
 /**
  * Membuat Component Main
  * Untuk menyimpan Component Hero, Movies dan AddMovieForm
  */
-function Home() {
-
-  const [ movies, setMovies ]= useState(data);
+function Home({ movies, setMovies}) {
 
 
   return (
 
-    <main>
-      <div>
-      <Hero />
-      <Movies movies={movies} setMovies={setMovies}/>
-      <AddMovieForm movies={movies} setMovies={setMovies}/>
+  <>
+    <div>
+      <Hero/>
+      <Movies title="Latest movie"/>/
     </div>
-    </main>
+  </>
     
   );
 }

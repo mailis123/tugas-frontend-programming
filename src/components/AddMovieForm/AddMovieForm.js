@@ -1,8 +1,10 @@
 import { nanoid } from "nanoid";
 import { React, useState } from "react";
 import styles from "./AddMovieForm.module.css";
-
-
+import { useDispath } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addMovie } from "../features/moviesSlice";
+import Button from "../ui/Button/Button";
 
 // Membuat Component AddMovieForm
 function AddMovieForm(props) {
