@@ -1,33 +1,33 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
+import { useDispatch } from "react-redux";
+import { updateMovies } from "../../components/features/moviesSlice";
 import Hero from "../../components/Hero/Hero";
 import Movies from "../../components/Movies/Movies";
-
+import ENDPOINTS from "../../utils/constans/endpoints";
 
 function NowPlaying() {
-    // menyimpan api_key dan url ke variable
-    const API_KEY = process.env.REACT_APP_API_KEY;
-    const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
+    
+    const dispatch = useDispatch();
 
-    // buat state movies
-    const  [movies, setMovies] = useState([]);
-
+    
     useEffect(() => {
         getNowPlayingMovies();
     }, []);
 
     async function getNowPlayingMovies() {
 
-        const response = await axios(URL);
+        const response = await axios(ENDPOINTS.NOW_PLAYING);
 
-        setMovies(response.data.results);
+        const movies = response.data.results;
+        dispatch(updateMovies(movies));
     } 
     
     
     return(
         <>
         <Hero/>
-        <Movies titlePage="Now Playing Movies" movies={movies}/>
+        <Movies title="Now Playing Movies" />
         </>
     );
 }

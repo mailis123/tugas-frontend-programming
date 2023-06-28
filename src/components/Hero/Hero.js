@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createRoot } from 'react-dom/client'
 import Button from "../ui/Button/Button";
 import StyledHero, { Container } from './Hero.styled';
 import axios from "axios";
@@ -51,7 +52,6 @@ function Hero() {
 
     setMovie(response.data);
   }
-  console.log(movie);
   
   return (
     <Container>

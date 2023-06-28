@@ -29,6 +29,7 @@ const moviesSlice = createSlice({
   },
 });
 
+
 /**
  * Slice menghasilkan action dan reducers
  * Nama action diambil dari nama reducer
